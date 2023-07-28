@@ -1,0 +1,56 @@
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+.robotsCollection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.botCard {
+  background: #d9d9d9;
+  width: 15.2rem;
+  border-radius: 0.3rem;
+  border: 1px solid #6c757d;
+}
+
+.botAvatar {
+  background: #e5e5e5;
+  width: 15rem;
+  height: 14rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.botAvatar img {
+  width: 12rem;
+}
+
+.botBody {
+  padding: 0.8rem;
+}
+
+.botCatchPhrase {
+  word-wrap: break-word;
+}
+
+.stats {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+li.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+h3,
+p {
+  padding-bottom: 0.8rem;
+}
