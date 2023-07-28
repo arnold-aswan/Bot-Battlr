@@ -1,13 +1,22 @@
 import React from "react";
 import { GiTemplarShield, GiCrossedSwords } from "react-icons/gi";
 import { BsHeartPulseFill } from "react-icons/bs";
+
 import "./BotCollection.css";
 
-function BotCollection({ renderBots }) {
+function BotCollection({ renderBots, enlist }) {
+  const handleClick = (bot) => {
+    enlist(bot);
+  };
+
   const botCards = (bots) => {
     return bots.map((bot) => {
       return (
-        <article key={bot.id} className="botCard">
+        <article
+          key={bot.id}
+          className="botCard"
+          onClick={() => handleClick(bot.id)}
+        >
           <div className="botAvatar">
             <img src={bot.avatar_url} alt="bot_image" />
           </div>
