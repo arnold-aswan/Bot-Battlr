@@ -1,5 +1,8 @@
 .yourBots {
-  min-height: 30rem;
+  min-height: 14rem;
   background: greenyellow;
   margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
