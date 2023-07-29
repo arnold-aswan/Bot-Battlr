@@ -1,10 +1,9 @@
-import logo from "./logo.svg";
-import "./App.css";
 import { useEffect, useState } from "react";
 import BotCollection from "./components/BotCollection";
 import YourBotCollection from "./components/YourBotCollection";
 import { GiTemplarShield, GiCrossedSwords } from "react-icons/gi";
 import { BsHeartPulseFill } from "react-icons/bs";
+import "./App.css";
 
 function App() {
   const [robots, setRobots] = useState([]);
@@ -21,9 +20,18 @@ function App() {
   }, []);
 
   const handleEnlist = (bot) => {
-    console.log(bot);
     const army = robots.filter((bots) => bots.id === bot);
-    setYourBots([...yourBots, army]);
+    const yourArmy = [...yourBots, ...army];
+    setYourBots(yourArmy);
+  };
+
+  const dischargeBot = (bot) => {
+    console.log(bot);
+    const notDischarge = yourBots.filter((bots) => bots.id !== bot.id);
+    // const yourArmy = [notDischarge];
+    console.log(notDischarge);
+    setYourBots(notDischarge);
+    console.log(yourBots);
   };
 
   return (
@@ -33,8 +41,15 @@ function App() {
         shield={<GiTemplarShield />}
         attack={<GiCrossedSwords />}
         health={<BsHeartPulseFill />}
+        discharge={dischargeBot}
       />
-      <BotCollection renderBots={robots} enlist={handleEnlist} />
+      <BotCollection
+        renderBots={robots}
+        enlist={handleEnlist}
+        shield={<GiTemplarShield />}
+        attack={<GiCrossedSwords />}
+        health={<BsHeartPulseFill />}
+      />
     </div>
   );
 }
