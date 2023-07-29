@@ -3,7 +3,8 @@ import "./YourBotCollection.css";
 
 function YourBotCollection({ enlisted, shield, attack, health, discharge }) {
   const handleDischarge = (botId) => {
-    discharge(botId);
+    const notDischarged = enlisted.filter((bots) => bots.id !== botId);
+    discharge(notDischarged);
   };
 
   function yourBots(enlistedBots) {
