@@ -1,10 +1,8 @@
 import React from "react";
-import { GiTemplarShield, GiCrossedSwords } from "react-icons/gi";
-import { BsHeartPulseFill } from "react-icons/bs";
 
 import "./BotCollection.css";
 
-function BotCollection({ renderBots, enlist }) {
+function BotCollection({ renderBots, enlist, shield, attack, health }) {
   const handleClick = (bot) => {
     enlist(bot);
   };
@@ -28,15 +26,15 @@ function BotCollection({ renderBots, enlist }) {
             <div className="botStats">
               <ul className="stats">
                 <li className="stat">
-                  <BsHeartPulseFill />
+                  {health}
                   {bot.health}
                 </li>
                 <li className="stat">
-                  <GiCrossedSwords />
+                  {attack}
                   {bot.damage}
                 </li>
                 <li className="stat">
-                  <GiTemplarShield />
+                  {shield}
                   {bot.armor}
                 </li>
               </ul>
