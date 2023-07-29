@@ -26,12 +26,7 @@ function App() {
   };
 
   const dischargeBot = (bot) => {
-    console.log(bot);
-    const notDischarge = yourBots.filter((bots) => bots.id !== bot.id);
-    // const yourArmy = [notDischarge];
-    console.log(notDischarge);
-    setYourBots(notDischarge);
-    console.log(yourBots);
+    setYourBots(bot);
   };
 
   return (
