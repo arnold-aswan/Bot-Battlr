@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import BotCollection from "./components/BotCollection";
-import YourBotCollection from "./components/YourBotCollection";
+import YourBotArmy from "./components/YourBotArmy";
 import { GiTemplarShield, GiCrossedSwords } from "react-icons/gi";
 import { BsHeartPulseFill } from "react-icons/bs";
 import "./App.css";
@@ -15,7 +15,7 @@ function App() {
         .then((r) => r.json())
         .then((bots) => setRobots(bots));
     } catch (error) {
-      console.log(error, "something went wrong");
+      console.log("Error fetching bots data: ", error);
     }
   }, []);
 
@@ -31,12 +31,12 @@ function App() {
 
   return (
     <div className="app">
-      <YourBotCollection
+      <YourBotArmy
         enlisted={yourBots}
-        shield={<GiTemplarShield />}
-        attack={<GiCrossedSwords />}
-        health={<BsHeartPulseFill />}
-        discharge={dischargeBot}
+        shield={<GiTemplarShield style={{ color: "blue" }} />}
+        attack={<GiCrossedSwords style={{ color: "green" }} />}
+        health={<BsHeartPulseFill style={{ color: "red" }} />}
+        release={dischargeBot}
       />
       <BotCollection
         renderBots={robots}
