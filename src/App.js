@@ -4,10 +4,12 @@ import YourBotArmy from "./components/YourBotArmy";
 import { GiTemplarShield, GiCrossedSwords } from "react-icons/gi";
 import { BsHeartPulseFill } from "react-icons/bs";
 import "./App.css";
+import BotSpecs from "./components/BotSpecs";
 
 function App() {
   const [robots, setRobots] = useState([]);
   const [yourBots, setYourBots] = useState([]);
+  const [selectedBotIndex, setSelectedBotIndex] = useState(null);
 
   useEffect(() => {
     try {
@@ -19,10 +21,16 @@ function App() {
     }
   }, []);
 
+  const botSpec = (data) => {
+    console.log(data);
+    setSelectedBotIndex(data);
+  };
+
   const handleEnlist = (bot) => {
     const army = robots.filter((bots) => bots.id === bot);
     const yourArmy = [...yourBots, ...army];
     setYourBots(yourArmy);
+    setSelectedBotIndex(null);
   };
 
   const dischargeBot = (bot) => {
@@ -38,13 +46,31 @@ function App() {
         health={<BsHeartPulseFill style={{ color: "red" }} />}
         release={dischargeBot}
       />
-      <BotCollection
-        renderBots={robots}
-        enlist={handleEnlist}
-        shield={<GiTemplarShield />}
-        attack={<GiCrossedSwords />}
-        health={<BsHeartPulseFill />}
-      />
+      {selectedBotIndex !== null ? (
+        <BotSpecs
+          bot={robots[selectedBotIndex]}
+          shield={
+            <GiTemplarShield style={{ color: "blue", fontSize: "2rem" }} />
+          }
+          attack={
+            <GiCrossedSwords style={{ color: "green", fontSize: "2rem" }} />
+          }
+          health={
+            <BsHeartPulseFill style={{ color: "red", fontSize: "2rem" }} />
+          }
+          setSelectedBotIndex={setSelectedBotIndex}
+          enlistBot={handleEnlist}
+        />
+      ) : (
+        <BotCollection
+          renderBots={robots}
+          enlist={handleEnlist}
+          shield={<GiTemplarShield />}
+          attack={<GiCrossedSwords />}
+          health={<BsHeartPulseFill />}
+          BotSpecs={botSpec}
+        />
+      )}
     </div>
   );
 }
