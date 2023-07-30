@@ -1,11 +1,6 @@
-/* img,
-svg {
-  max-width: 100%;
-  display: block;
-} */
-
 .robotsCollection {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem;
