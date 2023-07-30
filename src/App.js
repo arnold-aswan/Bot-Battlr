@@ -42,6 +42,16 @@ function App() {
     setYourBots(bot);
   };
 
+  const filterBots = (data) => {
+    console.log(data);
+    if (data === "All") {
+      return true;
+    } else {
+      const filtered = robots.filter((bots) => bots.bot_class === data);
+      // console.log(filtered);
+      setRobots(filtered);
+    }
+  };
   return (
     <div className="app">
       <YourBotArmy
@@ -74,6 +84,7 @@ function App() {
           attack={<GiCrossedSwords />}
           health={<BsHeartPulseFill />}
           BotSpecs={botSpec}
+          filterBy={filterBots}
         />
       )}
     </div>
