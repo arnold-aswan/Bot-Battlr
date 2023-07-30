@@ -76,3 +76,14 @@ p {
   background: #ef233c;
   transform: scale(1.2);
 }
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.filter,
+select {
+  font-size: 1.3rem;
+}
