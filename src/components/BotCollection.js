@@ -2,18 +2,30 @@ import React from "react";
 
 import "./BotCollection.css";
 
-function BotCollection({ renderBots, enlist, shield, attack, health }) {
-  const handleClick = (bot) => {
-    enlist(bot);
+function BotCollection({
+  renderBots,
+  enlist,
+  shield,
+  attack,
+  health,
+  BotSpecs,
+}) {
+  // const handleClick = (bot) => {
+  //   enlist(bot);
+  // };
+
+  const handleBotSpecs = (botId) => {
+    BotSpecs(botId);
   };
 
   const botCards = (bots) => {
-    return bots.map((bot) => {
+    return bots.map((bot, index) => {
       return (
         <article
           key={bot.id}
           className="botCard"
-          onClick={() => handleClick(bot.id)}
+          // onClick={() => handleClick(bot.id)}
+          onClick={() => handleBotSpecs(index)}
         >
           <div className="botAvatar">
             <img src={bot.avatar_url} alt="bot_image" />
