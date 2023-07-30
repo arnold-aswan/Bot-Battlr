@@ -48,12 +48,11 @@ function App() {
 
   const filterBots = (data) => {
     console.log(data);
+    const robot = [...robots];
     if (data === "All") {
-      // return true;
       setRobots(copyBots);
     } else {
       const filtered = copyBots.filter((bots) => bots.bot_class === data);
-      // console.log(filtered);
       setRobots(filtered);
     }
   };
