@@ -9,6 +9,7 @@ function BotCollection({
   attack,
   health,
   BotSpecs,
+  filterBy,
 }) {
   // const handleClick = (bot) => {
   //   enlist(bot);
@@ -16,6 +17,12 @@ function BotCollection({
 
   const handleBotSpecs = (botId) => {
     BotSpecs(botId);
+  };
+
+  const handleFilter = (e) => {
+    // console.log(e.target.value);
+    let filter = e.target.value;
+    filterBy(filter);
   };
 
   const botCards = (bots) => {
@@ -34,6 +41,7 @@ function BotCollection({
             <div className="botInfo">
               <h3 className="botName">{bot.name}</h3>
               <p className="botCatchPhrase">{bot.catchphrase}</p>
+              <p className="botClass">{bot.bot_class}</p>
             </div>
             <div className="botStats">
               <ul className="stats">
@@ -57,7 +65,20 @@ function BotCollection({
     });
   };
 
-  return <div className="robotsCollection">{botCards(renderBots)}</div>;
+  return (
+    <>
+      <select onChange={handleFilter}>
+        <option defaultValue={"All"}>All</option>
+        <option value={"Support"}>Support</option>
+        <option value={"Medic"}>Medic</option>
+        <option value={"Assault"}>Assault</option>
+        <option value={"Defender"}>Defender</option>
+        <option value={"Captain"}>Captain</option>
+        <option value={"Witch"}>Witch</option>
+      </select>
+      <div className="robotsCollection">{botCards(renderBots)}</div>
+    </>
+  );
 }
 
 export default BotCollection;
