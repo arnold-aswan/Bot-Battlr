@@ -23,15 +23,23 @@ function YourBotCollection({ enlisted, shield, attack, health, release }) {
     // initialize empty object
     const botsById = {};
     // filter based on bot id
+    const botsByClass = {};
     const filteredBots = enlistedBots.filter((bot) => {
       // if bot id ! in botsById obj add it & return true
-      if (!botsById[bot.id]) {
+
+      if (!botsById[bot.id] && !botsByClass[bot.bot_class]) {
         botsById[bot.id] = true;
+        botsByClass[bot.bot_class] = true;
         return true;
       } else {
         // else if bot id is already in botsById obj return false
         return false;
       }
+      //  if (!botsByClass[bot.bot_class]) {
+      //   botsByClass[bot.bot_class] = true;
+      // } else {
+      //   return false;
+      // }
     });
     // map with the filtered obj
     return filteredBots.map((bot) => {
