@@ -31,6 +31,11 @@ function App() {
     const yourArmy = [...yourBots, ...army];
     setYourBots(yourArmy);
     setSelectedBotIndex(null);
+
+    // Bot removed from bot colllection and added to your army
+    const remRobots = robots.filter((bots) => bots.id !== bot);
+    // console.log(remRobots);
+    setRobots(remRobots);
   };
 
   const dischargeBot = (bot) => {
