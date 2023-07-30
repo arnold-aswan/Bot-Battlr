@@ -67,15 +67,18 @@ function BotCollection({
 
   return (
     <>
-      <select onChange={handleFilter}>
-        <option defaultValue={"All"}>All</option>
-        <option value={"Support"}>Support</option>
-        <option value={"Medic"}>Medic</option>
-        <option value={"Assault"}>Assault</option>
-        <option value={"Defender"}>Defender</option>
-        <option value={"Captain"}>Captain</option>
-        <option value={"Witch"}>Witch</option>
-      </select>
+      <div className="filter">
+        Filter Bots BY Class:
+        <select onChange={handleFilter}>
+          <option defaultValue={"All"}>All</option>
+          <option value={"Support"}>Support</option>
+          <option value={"Medic"}>Medic</option>
+          <option value={"Assault"}>Assault</option>
+          <option value={"Defender"}>Defender</option>
+          <option value={"Captain"}>Captain</option>
+          <option value={"Witch"}>Witch</option>
+        </select>
+      </div>
       <div className="robotsCollection">{botCards(renderBots)}</div>
     </>
   );
