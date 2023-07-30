@@ -16,6 +16,7 @@ svg {
   width: 15.2rem;
   border-radius: 0.3rem;
   border: 1px solid #6c757d;
+  cursor: pointer;
 }
 
 .botAvatar {
@@ -51,7 +52,27 @@ li.stat {
   align-items: center;
   gap: 0.5rem;
 }
-h3,
+.discharge,
 p {
   padding-bottom: 0.8rem;
+}
+
+.discharge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn-discharge {
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+  background: black;
+  color: white;
+  border-radius: 0.2rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-discharge:hover {
+  background: #ef233c;
+  transform: scale(1.2);
 }
