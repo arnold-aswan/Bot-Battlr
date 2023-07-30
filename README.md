@@ -7,11 +7,19 @@ Bot Battlr is a web app that allows you to custom build your own bot army. The a
 # Features
 
 - See profiles of each bot in Bots collection.
+  ![see-bots](https://github.com/arnold-aswan/Bot-Battlr/assets/135007872/3c445835-264d-4d85-a99d-0f58dbf58941)
+
 - Add an individual bot to your army by clicking on it.
-- Realease a bot from your army by clicking on it.
+  ![add-to-your-army](https://github.com/arnold-aswan/Bot-Battlr/assets/135007872/b04f3fb9-ed83-467b-a161-48f46ef31f76)
+- Realease a bot from your army by clicking on it from your army bots.
 - Discharge a bot from the service forever by clicking on the discharge button.
+  ![discharge](https://github.com/arnold-aswan/Bot-Battlr/assets/135007872/8f4645f9-de3c-4492-84eb-6f949aaa3de6)
+
 - Choose if you want to enlist a bot in your army or just see it's specs.
+  ![check-specs](https://github.com/arnold-aswan/Bot-Battlr/assets/135007872/38ad700a-683b-417d-ae83-78640b6dba62)
+
 - Filter bots by their class
+  ![filter-by-class](https://github.com/arnold-aswan/Bot-Battlr/assets/135007872/c4b97e72-f41c-4439-b364-3671bcdc82d4)
 
 # Dependencies
 
