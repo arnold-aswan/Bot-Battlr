@@ -37,10 +37,6 @@ p {
   width: fit-content;
 }
 
-.stat {
-  /* font-size: 1.5rem; */
-}
-
 .buttons {
   padding-block: 1rem;
   display: flex;
