@@ -10,12 +10,16 @@ function App() {
   const [robots, setRobots] = useState([]);
   const [yourBots, setYourBots] = useState([]);
   const [selectedBotIndex, setSelectedBotIndex] = useState(null);
+  const [copyBots, setCopyBots] = useState([]);
 
   useEffect(() => {
     try {
       fetch("http://localhost:3000/bots")
         .then((r) => r.json())
-        .then((bots) => setRobots(bots));
+        .then((bots) => {
+          setRobots(bots);
+          setCopyBots(bots);
+        });
     } catch (error) {
       console.log("Error fetching bots data: ", error);
     }
@@ -45,9 +49,10 @@ function App() {
   const filterBots = (data) => {
     console.log(data);
     if (data === "All") {
-      return true;
+      // return true;
+      setRobots(copyBots);
     } else {
-      const filtered = robots.filter((bots) => bots.bot_class === data);
+      const filtered = copyBots.filter((bots) => bots.bot_class === data);
       // console.log(filtered);
       setRobots(filtered);
     }
