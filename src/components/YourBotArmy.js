@@ -64,6 +64,7 @@ function YourBotCollection({ enlisted, shield, attack, health, release }) {
                 </button>
               </div>
               <p className="botCatchPhrase">{bot.catchphrase}</p>
+              <p className="botClass">{bot.bot_class}</p>
             </div>
             <div className="botStats">
               <ul className="stats">
