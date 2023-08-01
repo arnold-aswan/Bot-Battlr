@@ -48,7 +48,7 @@ function App() {
 
   const filterBots = (data) => {
     console.log(data);
-    const robot = [...robots];
+    // const robot = [...robots];
     if (data === "All") {
       setRobots(copyBots);
     } else {
