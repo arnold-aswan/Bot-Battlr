@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     try {
-      fetch("http://localhost:3000/bots")
+      fetch("https://json-server-68la.onrender.com/bots")
         .then((r) => r.json())
         .then((bots) => {
           setRobots(bots);
