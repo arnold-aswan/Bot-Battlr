@@ -9,7 +9,7 @@ function YourBotCollection({ enlisted, shield, attack, health, release }) {
 
   const handlePermanentDicharge = (botId) => {
     try {
-      fetch(`http://localhost:3000/bots/${botId}`, {
+      fetch(`https://json-server-68la.onrender.com/bots${botId}`, {
         method: "DELETE",
       })
         .then((r) => r.json())
